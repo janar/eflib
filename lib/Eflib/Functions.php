@@ -28,8 +28,6 @@ function pre($data, $title = '') {
  * For example 3727 seconds will return object containing
  * fallowing variables and values
  * 
- * There is a simpler PHP5 solution also AFAIK
- * 
  * years => 0
  * months => 0
  * days => 0
@@ -37,6 +35,8 @@ function pre($data, $title = '') {
  * minutes => 2
  * seconds => 7
  * 
+ * There is a simpler PHP5 solution also AFAIK
+ *
  * @param Integer $time Parsable seconds
  * 
  * @return Object
@@ -88,6 +88,7 @@ function secondsToCountDown($time, $newTrans = array()){
 	
 	$trans = array_merge($trans, $newTrans);
 	
+	//TODO: this part should be simplified little more
 	if($obj->years > 0){
 		return $obj->years . $trans['years'] . 
 			$obj->months . $trans['months'] .  
@@ -96,13 +97,12 @@ function secondsToCountDown($time, $newTrans = array()){
 			$obj->minutes . $trans['minutes'] . 
 			$obj->seconds . $trans['seconds'];
 	} else if($obj->months > 0){
-			$obj->months . $trans['months'] .  
+			return $obj->months . $trans['months'] .  
 			$obj->days . $trans['days'] . 
 			$obj->hours . $trans['hours'] . 
 			$obj->minutes . $trans['minutes'] . 
 			$obj->seconds . $trans['seconds'];
-	}
-	if($obj->days > 0){
+	} else if($obj->days > 0){
 		return $obj->days . ' days ' . 
 			$obj->hours . $trans['hours'] . 
 			$obj->minutes . $trans['minutes'] . 

@@ -1,7 +1,9 @@
 <?php
 require_once './../../lib/Eflib/Functions.php';
 ?>
-<h1>Examples of using Functions.php file<h1>
+<h1>Examples of using Functions.php file</h1>
+
+<p><a href="./..">Back</a></p>
 
 <h2>secondsToCountDownParts</h2>
 <p>
