@@ -24,10 +24,10 @@ function pre($data, $title = '') {
 
 
 /**
- * Returns object with timeparts in countdown fashion
+ * Returns object with timeparts in "estimated time of arrival" fashion
  * For example 3727 seconds will return object containing
  * fallowing variables and values
- * 
+ * ESTIMATED TIME OF ARRIVAL
  * years => 0
  * months => 0
  * days => 0
@@ -35,13 +35,16 @@ function pre($data, $title = '') {
  * minutes => 2
  * seconds => 7
  * 
- * There is a simpler PHP5 solution also AFAIK
- *
+ * AFAIK there is a simpler PHP5 solution also with DateInterval class
+ * This functions handles months as 30 days long
+ * might be interested also in fallowing topic
+ * http://stackoverflow.com/questions/7379543/hhmm-to-seconds
+ * 
  * @param Integer $time Parsable seconds
  * 
  * @return Object
  */
-function secondsToCountDownParts($time){
+function secondsToEta($time){
 	
 	$keys    = array("years", "months", "days", "hours", "minutes", "seconds");
 	$lengths = array(31104000, 2592000, 86400, 3600, 60, 1);
@@ -64,18 +67,20 @@ function secondsToCountDownParts($time){
 
 
 /**
- * Returns string in countdown fashion from seconds
+ * Returns string in "estimated time of arrival" fashion from seconds
  * For example 3727 seconds would return fallowing string
  * 
  * 1h 2min 7s 
+ * 
+ * This functions handles months as 30 days long
  * 
  * @param Integer $time Parsable seconds
  * @param Integer $newTrans Overrides default "translations"
  * 
  * @return String
  */
-function secondsToCountDown($time, $newTrans = array()){
-	$obj = secondsToCountDownParts($time);
+function secondsToEtaString($time, $newTrans = array()){
+	$obj = secondsToEta($time);
 	
 	$trans = array(
 		'years' => ' years ',

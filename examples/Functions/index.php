@@ -5,19 +5,19 @@ require_once './../../lib/Eflib/Functions.php';
 
 <p><a href="./..">Back</a></p>
 
-<h2>secondsToCountDownParts</h2>
+<h2>secondsToEta</h2>
 <p>
-	secondsToCountDownParts(3727);
-	<?php pre(secondsToCountDownParts(3727)); ?>
+	secondsToEta(3727);
+	<?php pre(secondsToEta(3727)); ?>
 </p>
 
-<h2>secondsToCountDown</h2>
+<h2>secondsToEtaString</h2>
 <p>
-	secondsToCountDown(11111111) : 
-	<?php pre(secondsToCountDown(11111111)); ?>
+	secondsToEtaString(11111111) : 
+	<?php pre(secondsToEtaString(11111111)); ?>
 	<br />
 	Altered default translatioon for "seconds" part. <br />
-	secondsToCountDown(3727, array('seconds' => 'sek'));
-	<?php pre(secondsToCountDown(3727, array('seconds' => 'sek'))); ?>
+	secondsToEtaString(3727, array('seconds' => 'sek'));
+	<?php pre(secondsToEtaString(3727, array('seconds' => 'sek'))); ?>
 </p>
 
